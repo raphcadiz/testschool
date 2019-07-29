@@ -24,7 +24,7 @@ import Profile from "./screens/Profile/";
 import Settings from "./screens/Settings";
 import School from "./screens/School";
 import Contact from "./screens/Contact";
-import Parents from "./screens/Parents";
+// import Parents from "./screens/Parents";
 import Newsletter from "./screens/Newsletter";
 import Post from "./screens/Post";
 import Event from "./screens/Event";
@@ -41,7 +41,7 @@ const Drawer = createDrawerNavigator(
     Profile: { screen: Profile },
     Settings: { screen: Settings },
     Contact: { screen: Contact },
-    Parents: { screen: Parents },
+    // Parents: { screen: Parents },
     Newsletter: { screen: Newsletter }
     // Post: { screen: Post }
   },
@@ -58,7 +58,7 @@ const App = createStackNavigator(
     ForgotPassword: { screen: ForgotPassword },
     Walkthrough: { screen: Walkthrough },
     Story: { screen: Story },
-    Parents: { screen: Parents },
+    // Parents: { screen: Parents },
     Newsletter: { screen: Newsletter },
     Post: { screen: Post },
     Event: { screen: Event },
