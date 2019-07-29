@@ -45,7 +45,7 @@ class SideBar extends Component {
             <ListItem
               button
               onPress={() => {
-                navigation.navigate("Home");
+                navigation.navigate("Newsletter");
               }}
               iconLeft
               style={styles.links}
@@ -55,7 +55,7 @@ class SideBar extends Component {
             </ListItem>
             <ListItem
               button
-              onPress={() => {}}
+              onPress={() => this.props.navigation.navigate("Calendar")}
               iconLeft
               style={styles.links}
             >
@@ -64,7 +64,9 @@ class SideBar extends Component {
             </ListItem>
             <ListItem
               button
-              onPress={() => {}}
+              onPress={() => {
+                navigation.navigate("Parents");
+              }}
               iconLeft
               style={styles.links}
             >
@@ -158,7 +160,7 @@ class SideBar extends Component {
               <Text style={styles.linkText}>FEEDBACK</Text>
             </ListItem> */}
           </Content>
-          <View style={styles.logoutContainer}>
+          {/* <View style={styles.logoutContainer}>
             <View style={styles.logoutbtn} foregroundColor={"white"}>
               <Grid>
                 <Col>
@@ -194,7 +196,7 @@ class SideBar extends Component {
                 </Col>
               </Grid>
             </View>
-          </View>
+          </View> */}
         </ImageBackground>
       </Container>
     );

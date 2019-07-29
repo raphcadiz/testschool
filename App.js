@@ -1,7 +1,8 @@
 import React from "react";
 import { Root } from "native-base";
 import Setup from "./src/boot/setup";
-import { Font, AppLoading } from 'expo';
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
 
 export default class App extends React.Component {
 

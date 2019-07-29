@@ -169,5 +169,15 @@ export default {
     paddingRight: 15,
     paddingLeft: 15,
     paddingBottom: 20
+  },
+  iconContainer: { 
+    backgroundColor: '#222e84', 
+    alignItems: 'center',  
+    justifyContent: 'center', 
+    alignSelf: 'stretch', 
+    borderWidth: 15, 
+    borderColor: '#fff',
+    padding: 25,
+    flex: 1
   }
 };

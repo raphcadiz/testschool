@@ -27,6 +27,7 @@ import {
   View,
   Spinner,
 } from "native-base";
+import * as Font from 'expo-font'
 
 import { Grid, Col } from "react-native-easy-grid";
 import Carousel from "react-native-carousel-view";
@@ -38,10 +39,23 @@ const deviceWidth = Dimensions.get("window").width;
 const headerLogo = require("../../../assets/header-logo.png");
 
 class Contact extends Component {
-  componentDidMount() {
-    // this.props.fetchData(datas);
+
+  state = {
+    fontLoaded: false
+  }
+
+  async componentWillMount() {
+    await Font.loadAsync({
+      'Arial-Black': require('../../../assets/fonts/Arial-Black.ttf'),
+    })
+
+    this.setState({ fontLoaded: true });
   }
   render() {
+    if (!this.state.fontLoaded) {
+      return (<Text></Text>)
+    }
+    
     return (
       <Container>
         <SafeAreaView>
@@ -68,32 +82,47 @@ class Contact extends Component {
         >
           <View>
             <View>
-            <RNView>
-              <TouchableOpacity
-                activeOpacity={1}
-                style={styles.slide}
-              >
-                <ImageBackground
-                  style={styles.newsPoster}
-                  source={require("./assets/banner.png")}
+              <RNView>
+                <TouchableOpacity
+                  activeOpacity={1}
+                  style={styles.slide}
                 >
-                  <View style={styles.swiperTextContent}>
-                    <Text
-                      numberOfLines={2}
-                      style={styles.newsPosterHeader}
-                    >
-                      Contact Details
-                    </Text>
-                  </View>
-                </ImageBackground>
-              </TouchableOpacity>
-            </RNView>
+                  <ImageBackground
+                    style={styles.newsPoster}
+                    source={require("./assets/banner.png")}
+                  >
+                    <View style={styles.swiperTextContent}>
+                      <Text
+                        numberOfLines={2}
+                        style={[styles.newsPosterHeader, {fontFamily: 'Arial-Black'}]}
+                      >
+                        Contact Details
+                      </Text>
+                    </View>
+                  </ImageBackground>
+                </TouchableOpacity>
+              </RNView>
             </View>
 
             <View
-              style={{padding: 20}}
+              style={{
+                padding: 20, 
+                alignItems: 'center',
+                paddingBottom: 60
+              }}
             >
-              <Image source={require("./assets/map.jpg")} style={{resizeMode: "contain", width: deviceWidth}} />
+              <Image source={require("./assets/map.jpg")} style={{
+                resizeMode: "contain", 
+                width: (deviceWidth - 40), 
+                height: 215,
+                marginBottom: 20
+              }} />
+
+              <Text style={styles.headerText}>Address</Text>
+              <Text style={styles.contentText}>1 Test Street, Perth</Text>
+
+              <Text style={[styles.headerText, {marginTop: 20}]}>Phone</Text>
+              <Text style={styles.contentText}>1800 123 456</Text>
             </View>
             
           </View>

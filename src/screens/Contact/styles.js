@@ -1,5 +1,6 @@
 const React = require("react-native");
 const {Dimensions, Platform} = React;
+const primary = require("../../theme/variables/commonColor").brandPrimary;
 
 const deviceWidth = Dimensions.get("window").width;
 
@@ -42,7 +43,7 @@ export default {
     alignItems: 'center',
   },
   newsPosterHeader: {
-    fontWeight: "900",
+    // fontWeight: "900",
     fontSize: 35,
     textAlign: 'center',
     flexWrap: "wrap"
@@ -91,7 +92,7 @@ export default {
   slide: {
     flex: 1,
     width: deviceWidth,
-    height: 330,
+    // height: 330,
     backgroundColor: "transparent"
   },
   swiperTextContent: {
@@ -169,5 +170,16 @@ export default {
     paddingRight: 15,
     paddingLeft: 15,
     paddingBottom: 20
+  },
+  headerText: {
+    color: primary,
+    fontSize: 30,
+    fontWeight: "900",
+    textAlign: 'center',
+    flexWrap: "wrap"
+  },
+  contentText: {
+    color: '#000',
+    fontSize: 18
   }
 };

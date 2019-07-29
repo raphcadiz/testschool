@@ -74,7 +74,7 @@ class School extends Component {
             <RNView>
               <TouchableOpacity
                 activeOpacity={1}
-                onPress={() => this.props.navigation.navigate("Story")}
+                // onPress={() => this.props.navigation.navigate("Story")}
                 style={styles.slide}
               >
                 <ImageBackground
@@ -96,19 +96,51 @@ class School extends Component {
             </View>
             <View style={styles.containerGrid}>
               <Grid>
-                <Col style={{ flexDirection: "row", padding: 10, backgroundColor: '#222e84', alignItems: 'center',  justifyContent: 'center' }} size={2}>
+                {/* <Col style={styles.iconContainer}>
                   <TouchableOpacity
                     >
-                    <Icon name="ios-home" size={160} style={{color: "#FFF"}} />
+                    <Icon name="ios-home" size={160} style={{color: "#FFF", fontSize: 48}} />
+                  </TouchableOpacity>
+                </Col> */}
+                <Col style={styles.iconContainer} >
+                  <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("Newsletter")}
+                    >
+                    <Icon name="ios-paper" size={160} style={{color: "#FFF", fontSize: 48, alignSelf: 'center'}} />
+                    <Text style={{color: '#fff', fontSize: 13}}>Newsletter</Text>
                   </TouchableOpacity>
                 </Col>
-                <Col style={{ flexDirection: "row", padding: 10, backgroundColor: '#222e84', alignItems: 'center',  justifyContent: 'center' }} size={2}>
+                <Col style={styles.iconContainer}>
                   <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("Calendar")}
                     >
-                    <Icon name="ios-home" size={160} style={{color: "#FFF"}} />
+                    <Icon name="ios-calendar" size={160} style={{color: "#FFF", fontSize: 48, alignSelf: 'center'}} />
+                    <Text style={{color: '#fff', fontSize: 13}}>Calendar</Text>
                   </TouchableOpacity>
                 </Col>
               </Grid>
+              <Grid>
+                <Col style={styles.iconContainer}>
+                  <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("Parents")}
+                    >
+                    <Icon name="ios-person" size={160} style={{color: "#FFF", fontSize: 48, alignSelf: 'center'}} />
+                    <Text style={{color: '#fff', fontSize: 13}}>Parents</Text>
+                  </TouchableOpacity>
+                </Col>
+                <Col style={styles.iconContainer}>
+                  <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("Contact")}
+                    >
+                    <Icon name="ios-call" size={160} style={{color: "#FFF", fontSize: 48, alignSelf: 'center'}} />
+                    <Text style={{color: '#fff', fontSize: 13}}>Contact</Text>
+                  </TouchableOpacity>
+                </Col>
+              </Grid>
+              {/* <Grid>
+                
+                <Col style={{borderWidth: 15, borderColor: '#fff', padding: 25}}></Col>
+              </Grid> */}
             </View>
           </View>
         </Content>

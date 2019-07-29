@@ -24,6 +24,10 @@ import Profile from "./screens/Profile/";
 import Settings from "./screens/Settings";
 import School from "./screens/School";
 import Contact from "./screens/Contact";
+import Parents from "./screens/Parents";
+import Newsletter from "./screens/Newsletter";
+import Post from "./screens/Post";
+import Event from "./screens/Event";
 
 const Drawer = createDrawerNavigator(
   {
@@ -36,7 +40,10 @@ const Drawer = createDrawerNavigator(
     Feedback: { screen: Feedback },
     Profile: { screen: Profile },
     Settings: { screen: Settings },
-    Contact: { screen: Contact }
+    Contact: { screen: Contact },
+    Parents: { screen: Parents },
+    Newsletter: { screen: Newsletter }
+    // Post: { screen: Post }
   },
   {
     initialRouteName: "School",
@@ -51,6 +58,10 @@ const App = createStackNavigator(
     ForgotPassword: { screen: ForgotPassword },
     Walkthrough: { screen: Walkthrough },
     Story: { screen: Story },
+    Parents: { screen: Parents },
+    Newsletter: { screen: Newsletter },
+    Post: { screen: Post },
+    Event: { screen: Event },
     Comments: { screen: Comments },
     Channel: { screen: Channel },
     Contact: { screen: Contact },
@@ -58,7 +69,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "Login",
+    initialRouteName: "Walkthrough",
     headerMode: "none"
   }
 );
