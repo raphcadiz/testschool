@@ -9,7 +9,8 @@ import {
   Dimensions,
   View as RNView,
   SafeAreaView,
-  ImageBackground
+  ImageBackground,
+  Alert
 } from "react-native";
 
 import {
@@ -26,6 +27,7 @@ import {
 } from "native-base";
 import { Grid, Col } from "react-native-easy-grid";
 import IconI from "react-native-vector-icons/Ionicons";
+import IconF from "react-native-vector-icons/FontAwesome";
 
 import Modal from "react-native-modalbox";
 import Carousel from "react-native-carousel-view";
@@ -38,6 +40,8 @@ const headerLogo = require("../../../assets/header-logo.png");
 const deviceWidth = Dimensions.get("window").width;
 const primary = require("../../theme/variables/commonColor").brandPrimary;
 import HTML from 'react-native-render-html';
+import * as Calendar from 'expo-calendar';
+import * as Permissions from 'expo-permissions';
 
 var moment = require('moment');
 require('twix');
@@ -62,12 +66,52 @@ class Event extends Component {
     };
   }
 
-  modalO() {
-    this.setState({ open: true });
+  async checkCaledarPermission() {
+    const { status, expires, permissions } = await Permissions.getAsync(
+      Permissions.CALENDAR
+    );
+
+    if (status !== 'granted') {
+      return false;
+    }
+
+    return true;
   }
 
-  modalX() {
-    this.setState({ open: false });
+  askCalendarPermission = async () => {
+    const response = await Permissions.askAsync(Permissions.CALENDAR);
+    const granted = response.status === "granted";
+    return granted;
+  }
+
+  _addEvent = async () => {
+
+    if (!this.askCalendarPermission()) {
+      return;
+    }
+
+    const event = await Calendar.createEventAsync(Calendar.DEFAULT, {
+      "endDate": new Date(moment(this.props.item.end_date).format('YYYY-MM-DD')),
+      "startDate": new Date(moment(this.props.item.start_date).format('YYYY-MM-DD')),
+      "title": this.props.item.title,
+      "allDay": this.props.item.all_day,
+      "timeZone": this.props.item.timezone,
+      "location": (this.props.item.venue) ? (this.props.item.venue['address'] + ' ' + this.props.item.venue['city'] + ' ' + this.props.item.venue['country'] + ' ' + this.props.item.venue['zip']) : ''
+    })
+    .then(function(response){
+       Alert.alert(
+        'Success',
+        'Event was successfully added to your calendar.',
+        [
+          { text: 'OK', onPress: () => console.log('understand') },
+        ],
+        { cancelable: false }
+      );
+    })
+    .catch(function(error){
+      console.log(error.message)
+    })
+
   }
 
   render() {
@@ -90,6 +134,14 @@ class Event extends Component {
             <Image source={headerLogo} style={styles.imageHeader} />
           </Body>
           <Right>
+            <TouchableOpacity
+              onPress= { () => this._addEvent() }
+            >
+              <IconF
+                name="calendar-plus-o"
+                style={{color: '#fff', fontSize: 20}}
+              />
+            </TouchableOpacity>
           </Right>
         </Header>
         </SafeAreaView>

@@ -37,7 +37,7 @@ class Walkthrough extends Component {
               </Text>
               <IconI name="md-paper" style={styles.imageIcons} />
               <Text
-                numberOfLines={2}
+                numberOfLines={3}
                 style={
                   Platform.OS === "android" ? styles.aText : styles.iosText
                 }

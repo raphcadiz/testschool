@@ -73,8 +73,6 @@ class Newsletter extends Component {
     }
 
     this.setState({isFetching: true})
-    let start = moment().startOf('year').format('YYYY-MM-DD');
-    let end = moment().endOf('year').format('YYYY-MM-DD');
     let apiCall = await fetch('https://www.websitehostingperth.com.au/testschool/wp-json/wp/v2/posts')
       .then(response => response.json())
       .then(responseJson => {
@@ -109,8 +107,6 @@ class Newsletter extends Component {
       })
 
     }
-
-    console.log(f_posts)
 
     await this.setState({
       posts: f_posts,
@@ -241,7 +237,7 @@ class Newsletter extends Component {
                         numberOfLines={2}
                         style={[styles.newsPosterHeader, {fontFamily: 'Arial-Black'}]}
                       >
-                        Newsletter
+                        Latest News
                       </Text>
                     </View>
                   </ImageBackground>

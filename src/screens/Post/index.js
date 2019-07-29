@@ -102,7 +102,7 @@ class Post extends Component {
           <View>
             <ImageBackground
               style={styles.newsPoster}
-              source={ (this.props.item.featured_image) ? {uri: this.props.item.featured_image} : placeholderImg}
+              source={ (this.props.item.img_full) ? {uri: this.props.item.img_full} : placeholderImg}
             >
               <View style={[styles.swiperTextContent, {width: deviceWidth}]}>
                 <Text
