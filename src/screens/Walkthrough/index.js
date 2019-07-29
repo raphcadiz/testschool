@@ -33,7 +33,7 @@ class Walkthrough extends Component {
                     : styles.iospaginationText
                 }
               >
-                1 of 3
+                {/* 1 of 3 */}
               </Text>
               <IconI name="md-paper" style={styles.imageIcons} />
               <Text
@@ -42,72 +42,7 @@ class Walkthrough extends Component {
                   Platform.OS === "android" ? styles.aText : styles.iosText
                 }
               >
-                Explore the latest news from your mobile device
-              </Text>
-              <Button
-                transparent
-                rounded
-                onPress={() => this.props.navigation.navigate("Drawer")}
-                style={styles.Button}
-              >
-                <Text style={{ color: "#FFF", fontWeight: "600" }}>
-                  Skip To App
-                </Text>
-              </Button>
-            </View>
-
-            <View style={styles.slides}>
-              <Text
-                style={
-                  Platform.OS === "android"
-                    ? styles.apaginationText
-                    : styles.iospaginationText
-                }
-              >
-                2 of 3
-              </Text>
-              <Icon
-                name="ios-information-circle-outline"
-                style={styles.imageIcons}
-              />
-              <Text
-                numberOfLines={2}
-                style={
-                  Platform.OS === "android" ? styles.aText : styles.iosText
-                }
-              >
-                Get News Feed of variuos domains at one place
-              </Text>
-              <Button
-                transparent
-                rounded
-                onPress={() => this.props.navigation.navigate("Drawer")}
-                style={styles.Button}
-              >
-                <Text style={{ color: "#FFF", fontWeight: "600" }}>
-                  Skip To App
-                </Text>
-              </Button>
-            </View>
-
-            <View style={styles.slides}>
-              <Text
-                style={
-                  Platform.OS === "android"
-                    ? styles.apaginationText
-                    : styles.iospaginationText
-                }
-              >
-                3 of 3
-              </Text>
-              <IconI name="ios-volume-off" style={styles.imageIcons} />
-              <Text
-                numberOfLines={2}
-                style={
-                  Platform.OS === "android" ? styles.aText : styles.iosText
-                }
-              >
-                Get going with the React Native Flat App Theme
+               Explore our latest school news from your mobile device
               </Text>
               <Button
                 transparent
@@ -120,6 +55,7 @@ class Walkthrough extends Component {
                 </Text>
               </Button>
             </View>
+
           </Carousel>
         </Content>
       </Container>
