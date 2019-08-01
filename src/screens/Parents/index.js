@@ -205,7 +205,7 @@ class Newsletter extends Component {
                 >
                   <ImageBackground
                     style={styles.newsPoster}
-                    source={require("./assets/banner.png")}
+                    source={require("./assets/banner.jpg")}
                   >
                     <View style={styles.swiperTextContent}>
                       <Text

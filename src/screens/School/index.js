@@ -32,7 +32,7 @@ import { Grid, Col } from "react-native-easy-grid";
 import Carousel from "react-native-carousel-view";
 
 import { itemsFetchData } from "../../actions";
-// import datas from "./data.json";
+import FooterNavigation from "../../components/FooterNav/";
 
 import styles from "./styles";
 
@@ -87,7 +87,7 @@ class School extends Component {
                       numberOfLines={2}
                       style={styles.newsPosterHeader}
                     >
-                      St. Marks Primary School
+                      St. Mark's Primary School
                     </Text>
                   </View>
                 </ImageBackground>
@@ -145,20 +145,7 @@ class School extends Component {
           </View>
         </Content>
 
-        <Footer style={styles.tabStyle}>
-          <FooterTab>
-
-            <Button>
-              <Icon name="call" size={45} style={{color: "#FFF"}} />
-            </Button>
-            <Button>
-              <Icon name="mail" size={45} style={{color: "#FFF"}} />
-            </Button>
-            <Button>
-              <Icon name="settings" size={45} style={{color: "#FFF"}} />
-            </Button>
-          </FooterTab>
-        </Footer>
+        <FooterNavigation />
       </Container>
     );
   }

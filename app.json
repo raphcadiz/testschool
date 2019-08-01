@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "TestSchool",
-    "slug": "testschool",
+    "name": "StMarkSchool",
+    "slug": "stmarkschool",
     "privacy": "public",
     "sdkVersion": "33.0.0",
     "platforms": [
@@ -25,7 +25,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.perthdigitalagency.testschool"
+      "bundleIdentifier": "com.perthdigitalagency.stmarkschool"
     },
     "androidStatusBarColor": "#334393",
     "androidStatusBar": {
@@ -33,7 +33,7 @@
       "backgroundColor": "#334393"
     },
     "android": {
-      "package": "com.perthdigitalagency.testschool"
+      "package": "com.perthdigitalagency.stmarkschool"
     }
   }
 }

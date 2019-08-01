@@ -96,7 +96,7 @@ class Event extends Component {
       "title": this.props.item.title,
       "allDay": this.props.item.all_day,
       "timeZone": this.props.item.timezone,
-      "location": (this.props.item.venue) ? (this.props.item.venue['address'] + ' ' + this.props.item.venue['city'] + ' ' + this.props.item.venue['country'] + ' ' + this.props.item.venue['zip']) : ''
+      "location": (this.props.item.venue['venue']) ? (this.props.item.venue['address'] + ' ' + this.props.item.venue['city'] + ' ' + this.props.item.venue['country'] + ' ' + this.props.item.venue['zip']) : ''
     })
     .then(function(response){
        Alert.alert(
@@ -139,7 +139,7 @@ class Event extends Component {
             >
               <IconF
                 name="calendar-plus-o"
-                style={{color: '#fff', fontSize: 20}}
+                style={{color: '#fff', fontSize: 22}}
               />
             </TouchableOpacity>
           </Right>
